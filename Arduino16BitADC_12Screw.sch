@@ -1,0 +1,1707 @@
+EESchema Schematic File Version 2
+LIBS:Arduino16BitADC_12Screw-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:Arduino16BitADC_12Screw
+LIBS:freetronics_schematic
+LIBS:Arduino16BitADC_12Screw-cache
+EELAYER 25 0
+EELAYER END
+$Descr USLegal 14000 8500
+encoding utf-8
+Sheet 1 1
+Title "Arduino 16-Bit ADC Multiplexer/Logger/Terminal Shield"
+Date "2016-11-25"
+Rev "1"
+Comp "Prepared by V.A. Webb"
+Comment1 ""
+Comment2 "user to store several gigabytes of timestamped sensor data for offline analysis."
+Comment3 "analog sensor inputs at 16-bit resolution. The SD card and real-time clock allow the"
+Comment4 "This shield gives an 10-bit Arduino Uno the capacity to read up to eight single-ended"
+$EndDescr
+Text Label 3600 3300 2    56   ~ 0
+V2_IN
+$Comp
+L C C2
+U 1 1 58268DC6
+P 5000 1150
+F 0 "C2" H 5025 1250 50  0000 L CNN
+F 1 "10µF" H 5025 1050 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_5p5x4_5Pitch" H 5038 1000 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/documents/catalog/leadmlcc_conventional_fk_en.pdf" H 5000 1150 50  0001 C CNN
+F 4 "TDK Corporation" H 5000 1150 60  0001 C CNN "MFN"
+F 5 "FK20X7S1H106K" H 5000 1150 60  0001 C CNN "MFP#"
+F 6 "10µF ±10% 50V Ceramic Capacitor X7S Radial" H 5000 1150 60  0001 C CNN "Characteristics"
+F 7 "Through Hole;  0.217\" L x 0.157\" W (5.50mm x 4.00mm)" H 5000 1150 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 5000 1150 60  0001 C CNN "S1N"
+F 9 "445-8465-ND" H 5000 1150 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/tdk-corporation/FK20X7S1H106K/445-8465-ND/2815395" H 5000 1150 60  0001 C CNN "S1PLink"
+	1    5000 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 58268E15
+P 3800 1150
+F 0 "C1" H 3825 1250 50  0000 L CNN
+F 1 "0.1µF" H 3825 1050 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_4x2p5_5Pitch" H 3838 1000 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/documents/catalog/leadmlcc_conventional_fk_en.pdf" H 3800 1150 50  0001 C CNN
+F 4 "TDK Corporation" H 3800 1150 60  0001 C CNN "MFN"
+F 5 "FK24X7R1H334K" H 3800 1150 60  0001 C CNN "MFP#"
+F 6 "0.10µF ±10% 50V Ceramic Capacitor X7R Radial" H 3800 1150 60  0001 C CNN "Characteristics"
+F 7 "Through Hole; 0.157\" L x 0.098\" W (4.00mm x 2.50mm)" H 3800 1150 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 3800 1150 60  0001 C CNN "S1N"
+F 9 "445-5258-ND" H 3800 1150 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/tdk-corporation/FK28X7R1H104K/445-5258-ND/2256738" H 3800 1150 60  0001 C CNN "S1PLink"
+	1    3800 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 582690F3
+P 4400 1650
+F 0 "#PWR01" H 4400 1400 50  0001 C CNN
+F 1 "GND" H 4400 1500 50  0000 C CNN
+F 2 "" H 4400 1650 50  0000 C CNN
+F 3 "" H 4400 1650 50  0000 C CNN
+	1    4400 1650
+	1    0    0    -1  
+$EndComp
+Text Label 3450 850  0    60   ~ 0
+9V
+$Comp
+L GND #PWR02
+U 1 1 58274730
+P 5500 1650
+F 0 "#PWR02" H 5500 1400 50  0001 C CNN
+F 1 "GND" H 5500 1500 50  0000 C CNN
+F 2 "" H 5500 1650 50  0000 C CNN
+F 3 "" H 5500 1650 50  0000 C CNN
+	1    5500 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R9
+U 1 1 58274A6D
+P 5500 1450
+F 0 "R9" V 5580 1450 50  0000 C CNN
+F 1 "1K" V 5500 1450 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 5430 1450 50  0001 C CNN
+F 3 "https://www.seielect.com/Catalog/SEI-RNF_RNMF.pdf" H 5500 1450 50  0001 C CNN
+F 4 "Stackpole Electronics Inc." H 5500 1450 60  0001 C CNN "MFN"
+F 5 "RNF14FTD1K00" H 5500 1450 60  0001 C CNN "MFP#"
+F 6 "RES 1K OHM 1/4W 1% AXIAL" H 5500 1450 60  0001 C CNN "Characteristics"
+F 7 "Through Hole; 0.093\" Dia x 0.250\" L (2.35mm x 6.35mm)" H 5500 1450 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 5500 1450 60  0001 C CNN "S1N"
+F 9 "RNF14FTD1K00CT-ND" H 5500 1450 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RNF14FTD1K00/RNF14FTD1K00CT-ND/1975018" H 5500 1450 60  0001 C CNN "S1PLink"
+	1    5500 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D4
+U 1 1 58274BC0
+P 5500 1050
+F 0 "D4" H 5500 1150 50  0000 C CNN
+F 1 "LED" H 5500 950 50  0000 C CNN
+F 2 "LEDs:LED-3MM" H 5500 1050 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/WP3A8GD.pdf" H 5500 1050 50  0001 C CNN
+F 4 "Knightbright" H 5500 1050 60  0001 C CNN "MFN"
+F 5 "WP3A8GD" H 5500 1050 60  0001 C CNN "MFP#"
+F 6 "Green 568nm LED Indication - Discrete 2.2V Radial" H 5500 1050 60  0001 C CNN "Characteristics"
+F 7 "T-1" H 5500 1050 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 5500 1050 60  0001 C CNN "S1N"
+F 9 "754-1217-ND" H 5500 1050 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-search/en?keywords=754-1217-ND" H 5500 1050 60  0001 C CNN "S1PLink"
+	1    5500 1050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L MM22012Y152B FB2
+U 1 1 582B2110
+P 8150 1500
+F 0 "FB2" H 8100 1650 60  0000 C CNN
+F 1 "Ferrite Bead" H 8350 1350 60  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 8150 1350 60  0001 C CNN
+F 3 "" H 8150 1350 60  0001 C CNN
+F 4 "Value" H 8150 1500 60  0001 C CNN "MFN"
+F 5 "Value" H 8150 1500 60  0001 C CNN "MFP#"
+F 6 "Value" H 8150 1500 60  0001 C CNN "Characteristics"
+F 7 "0805" H 8150 1500 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 8150 1500 60  0001 C CNN "S1N"
+F 9 "Value" H 8150 1500 60  0001 C CNN "S1P#"
+F 10 "Value" H 8150 1500 60  0001 C CNN "S1PLink"
+	1    8150 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L MM22012Y152B FB1
+U 1 1 582B21A2
+P 8150 1000
+F 0 "FB1" H 8100 1150 60  0000 C CNN
+F 1 "Ferrite Bead" H 8350 850 60  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 8150 850 60  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/beads_commercial_signal_mmz2012_en.pdf" H 8150 850 60  0001 C CNN
+F 4 "TDK Corporation" H 8150 1000 60  0001 C CNN "MFN"
+F 5 "MMZ2012Y152BT000" H 8150 1000 60  0001 C CNN "MFP#"
+F 6 "FERRITE BEAD 1.5 KOHM AT 100 MHZ 0805 1LN" H 8150 1000 60  0001 C CNN "Characteristics"
+F 7 "0805 SMT" H 8150 1000 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 8150 1000 60  0001 C CNN "S1N"
+F 9 "445-1560-6-ND" H 8150 1000 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/tdk-corporation/MMZ2012Y152BT000/445-1560-6-ND/1725756" H 8150 1000 60  0001 C CNN "S1PLink"
+	1    8150 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR03
+U 1 1 582B2B4B
+P 7500 1000
+F 0 "#PWR03" H 7500 850 50  0001 C CNN
+F 1 "VCC" H 7500 1150 50  0000 C CNN
+F 2 "" H 7500 1000 50  0000 C CNN
+F 3 "" H 7500 1000 50  0000 C CNN
+	1    7500 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR04
+U 1 1 582B2C72
+P 7500 1500
+F 0 "#PWR04" H 7500 1250 50  0001 C CNN
+F 1 "GND" H 7500 1350 50  0000 C CNN
+F 2 "" H 7500 1500 50  0000 C CNN
+F 3 "" H 7500 1500 50  0000 C CNN
+	1    7500 1500
+	1    0    0    -1  
+$EndComp
+Text Label 8450 1000 0    56   ~ 0
+V1_IN
+Text Label 8450 1500 0    60   ~ 0
+G1_GND
+$Comp
+L C C4
+U 1 1 582B3747
+P 7750 1250
+F 0 "C4" H 7775 1350 50  0000 L CNN
+F 1 "1µF" H 7775 1150 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_5p5x4_5Pitch" H 7788 1100 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/documents/catalog/leadmlcc_conventional_fk_en.pdf" H 7750 1250 50  0001 C CNN
+F 4 "TDK Corporation" H 7750 1250 60  0001 C CNN "MFN"
+F 5 "FK20X7R1H105K" H 7750 1250 60  0001 C CNN "MFP#"
+F 6 "1µF ±10% 50V Ceramic Capacitor X7R Radial" H 7750 1250 60  0001 C CNN "Characteristics"
+F 7 "Through Hole; 0.217\" L x 0.157\" W (5.50mm x 4.00mm)" H 7750 1250 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 7750 1250 60  0001 C CNN "S1N"
+F 9 "445-2884-ND" H 7750 1250 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/tdk-corporation/FK20X7R1H105K/445-2884-ND/1008910" H 7750 1250 60  0001 C CNN "S1PLink"
+	1    7750 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L MM22012Y152B FB4
+U 1 1 582B3EFE
+P 9654 1512
+F 0 "FB4" H 9604 1662 60  0000 C CNN
+F 1 "Ferrite Bead" H 9854 1362 60  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 9654 1362 60  0001 C CNN
+F 3 "" H 9654 1362 60  0001 C CNN
+F 4 "Value" H 9654 1512 60  0001 C CNN "MFN"
+F 5 "Value" H 9654 1512 60  0001 C CNN "MFP#"
+F 6 "Value" H 9654 1512 60  0001 C CNN "Characteristics"
+F 7 "0805" H 9654 1512 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 9654 1512 60  0001 C CNN "S1N"
+F 9 "Value" H 9654 1512 60  0001 C CNN "S1P#"
+F 10 "Value" H 9654 1512 60  0001 C CNN "S1PLink"
+	1    9654 1512
+	1    0    0    -1  
+$EndComp
+$Comp
+L MM22012Y152B FB3
+U 1 1 582B3F0B
+P 9654 1012
+F 0 "FB3" H 9604 1162 60  0000 C CNN
+F 1 "Ferrite Bead" H 9854 862 60  0001 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 9654 862 60  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/beads_commercial_signal_mmz2012_en.pdf" H 9654 862 60  0001 C CNN
+F 4 "TDK Corporation" H 9654 1012 60  0001 C CNN "MFN"
+F 5 "MMZ2012Y152BT000" H 9654 1012 60  0001 C CNN "MFP#"
+F 6 "FERRITE BEAD 1.5 KOHM AT 100 MHZ 0805 1LN" H 9654 1012 60  0001 C CNN "Characteristics"
+F 7 "0805 SMT" H 9654 1012 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 9654 1012 60  0001 C CNN "S1N"
+F 9 "445-1560-6-ND" H 9654 1012 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/tdk-corporation/MMZ2012Y152BT000/445-1560-6-ND/1725756" H 9654 1012 60  0001 C CNN "S1PLink"
+	1    9654 1012
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR05
+U 1 1 582B3F11
+P 9004 1012
+F 0 "#PWR05" H 9004 862 50  0001 C CNN
+F 1 "VCC" H 9004 1162 50  0000 C CNN
+F 2 "" H 9004 1012 50  0000 C CNN
+F 3 "" H 9004 1012 50  0000 C CNN
+	1    9004 1012
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 582B3F17
+P 9004 1512
+F 0 "#PWR06" H 9004 1262 50  0001 C CNN
+F 1 "GND" H 9004 1362 50  0000 C CNN
+F 2 "" H 9004 1512 50  0000 C CNN
+F 3 "" H 9004 1512 50  0000 C CNN
+	1    9004 1512
+	1    0    0    -1  
+$EndComp
+Text Label 9954 1012 0    56   ~ 0
+V2_IN
+Text Label 9954 1512 0    60   ~ 0
+G2_GND
+$Comp
+L C C5
+U 1 1 582B3F2A
+P 9254 1262
+F 0 "C5" H 9279 1362 50  0000 L CNN
+F 1 "1µF" H 9279 1162 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_5p5x4_5Pitch" H 9292 1112 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/documents/catalog/leadmlcc_conventional_fk_en.pdf" H 9254 1262 50  0001 C CNN
+F 4 "TDK Corporation" H 9254 1262 60  0001 C CNN "MFN"
+F 5 "FK20X7R1H105K" H 9254 1262 60  0001 C CNN "MFP#"
+F 6 "1µF ±10% 50V Ceramic Capacitor X7R Radial" H 9254 1262 60  0001 C CNN "Characteristics"
+F 7 "Through Hole; 0.217\" L x 0.157\" W (5.50mm x 4.00mm)" H 9254 1262 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 9254 1262 60  0001 C CNN "S1N"
+F 9 "445-2884-ND" H 9254 1262 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/tdk-corporation/FK20X7R1H105K/445-2884-ND/1008910" H 9254 1262 60  0001 C CNN "S1PLink"
+	1    9254 1262
+	1    0    0    -1  
+$EndComp
+Text Notes 2600 2050 2    60   ~ 12
+External 9V power supply for sensors
+Text Notes 5731 2035 2    60   ~ 12
+Sensor power regulation: 9V dropped to 5V
+Text Notes 9350 2050 2    60   ~ 12
+5V ADC power supply with ferrite RF suppression
+Text Notes 6900 7300 2    60   ~ 12
+Arduino reset tactile button
+Text Notes 3900 4800 2    60   ~ 12
+ADC IC pin configurations and connections
+Text Notes 8894 4885 2    60   ~ 12
+Sensor screw-terminals with 5V supply
+$Comp
+L ADS115IDGST-RESCUE-Arduino16BitADC_12Screw U2
+U 1 1 582BC324
+P 4300 4300
+F 0 "U2" H 3950 5800 60  0000 C CNN
+F 1 "ADS115IDGST" H 4200 4200 60  0000 C CNN
+F 2 "VAW_FootPrints:MSOP-10" H 4950 4650 60  0001 C CNN
+F 3 "" H 4950 4650 60  0001 C CNN
+	1    4300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R6
+U 1 1 582BDD26
+P 4950 2900
+F 0 "R6" V 5030 2900 50  0000 C CNN
+F 1 "10K" V 4950 2900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 4880 2900 50  0001 C CNN
+F 3 "" H 4950 2900 50  0000 C CNN
+F 4 "Value" H 4950 2900 60  0001 C CNN "MFN"
+F 5 "Value" H 4950 2900 60  0001 C CNN "MFP#"
+F 6 "Value" H 4950 2900 60  0001 C CNN "Characteristics"
+F 7 "Value" H 4950 2900 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 4950 2900 60  0001 C CNN "S1N"
+F 9 "Value" H 4950 2900 60  0001 C CNN "S1P#"
+F 10 "Value" H 4950 2900 60  0001 C CNN "S1PLink"
+	1    4950 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R7
+U 1 1 582BDF20
+P 5150 2900
+F 0 "R7" V 5230 2900 50  0000 C CNN
+F 1 "10K" V 5150 2900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 5080 2900 50  0001 C CNN
+F 3 "" H 5150 2900 50  0000 C CNN
+F 4 "Value" H 5150 2900 60  0001 C CNN "MFN"
+F 5 "Value" H 5150 2900 60  0001 C CNN "MFP#"
+F 6 "Value" H 5150 2900 60  0001 C CNN "Characteristics"
+F 7 "Value" H 5150 2900 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 5150 2900 60  0001 C CNN "S1N"
+F 9 "Value" H 5150 2900 60  0001 C CNN "S1P#"
+F 10 "Value" H 5150 2900 60  0001 C CNN "S1PLink"
+	1    5150 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R8
+U 1 1 582BDFA4
+P 5350 2900
+F 0 "R8" V 5430 2900 50  0000 C CNN
+F 1 "10K" V 5350 2900 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 5280 2900 50  0001 C CNN
+F 3 "" H 5350 2900 50  0000 C CNN
+F 4 "Value" H 5350 2900 60  0001 C CNN "MFN"
+F 5 "Value" H 5350 2900 60  0001 C CNN "MFP#"
+F 6 "Value" H 5350 2900 60  0001 C CNN "Characteristics"
+F 7 "Value" H 5350 2900 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 5350 2900 60  0001 C CNN "S1N"
+F 9 "Value" H 5350 2900 60  0001 C CNN "S1P#"
+F 10 "Value" H 5350 2900 60  0001 C CNN "S1PLink"
+	1    5350 2900
+	1    0    0    -1  
+$EndComp
+Text Label 5550 3300 0    60   ~ 0
+SCL
+Text Label 5500 2500 0    60   ~ 0
+V2_IN
+Text Label 850  3250 2    56   ~ 0
+V1_IN
+$Comp
+L R R1
+U 1 1 582C0557
+P 2200 2850
+F 0 "R1" V 2280 2850 50  0000 C CNN
+F 1 "10K" V 2200 2850 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2130 2850 50  0001 C CNN
+F 3 "" H 2200 2850 50  0000 C CNN
+F 4 "Value" H 2200 2850 60  0001 C CNN "MFN"
+F 5 "Value" H 2200 2850 60  0001 C CNN "MFP#"
+F 6 "Value" H 2200 2850 60  0001 C CNN "Characteristics"
+F 7 "Value" H 2200 2850 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 2200 2850 60  0001 C CNN "S1N"
+F 9 "Value" H 2200 2850 60  0001 C CNN "S1P#"
+F 10 "Value" H 2200 2850 60  0001 C CNN "S1PLink"
+	1    2200 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 582C0564
+P 2400 2850
+F 0 "R2" V 2480 2850 50  0000 C CNN
+F 1 "10K" V 2400 2850 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2330 2850 50  0001 C CNN
+F 3 "" H 2400 2850 50  0000 C CNN
+F 4 "Value" H 2400 2850 60  0001 C CNN "MFN"
+F 5 "Value" H 2400 2850 60  0001 C CNN "MFP#"
+F 6 "Value" H 2400 2850 60  0001 C CNN "Characteristics"
+F 7 "Value" H 2400 2850 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 2400 2850 60  0001 C CNN "S1N"
+F 9 "Value" H 2400 2850 60  0001 C CNN "S1P#"
+F 10 "Value" H 2400 2850 60  0001 C CNN "S1PLink"
+	1    2400 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 582C0571
+P 2600 2850
+F 0 "R3" V 2680 2850 50  0000 C CNN
+F 1 "10K" V 2600 2850 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2530 2850 50  0001 C CNN
+F 3 "" H 2600 2850 50  0000 C CNN
+F 4 "Value" H 2600 2850 60  0001 C CNN "MFN"
+F 5 "Value" H 2600 2850 60  0001 C CNN "MFP#"
+F 6 "Value" H 2600 2850 60  0001 C CNN "Characteristics"
+F 7 "Value" H 2600 2850 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 2600 2850 60  0001 C CNN "S1N"
+F 9 "Value" H 2600 2850 60  0001 C CNN "S1P#"
+F 10 "Value" H 2600 2850 60  0001 C CNN "S1PLink"
+	1    2600 2850
+	1    0    0    -1  
+$EndComp
+Text Label 2850 3250 0    60   ~ 0
+SCL
+Text Label 2750 2450 0    60   ~ 0
+V1_IN
+Text Label 2700 4050 0    60   ~ 0
+G1_GND
+$Comp
+L TEC1776275 SCREWTERM1
+U 1 1 582C4292
+P 7300 3450
+F 0 "SCREWTERM1" H 7250 4000 47  0000 C CNN
+F 1 "TEC1776275" H 7250 2600 47  0000 C CNN
+F 2 "freetronics_footprints:SCREWTERM12_3.5" H 7300 3450 47  0001 C CNN
+F 3 "" H 7300 3450 47  0001 C CNN
+	1    7300 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 582C4894
+P 6850 4400
+F 0 "#PWR07" H 6850 4150 50  0001 C CNN
+F 1 "GND" H 6850 4250 50  0000 C CNN
+F 2 "" H 6850 4400 50  0000 C CNN
+F 3 "" H 6850 4400 50  0000 C CNN
+	1    6850 4400
+	1    0    0    -1  
+$EndComp
+Text Label 6550 3200 2    60   ~ 0
+AIN00
+Text Label 850  3450 2    60   ~ 0
+AIN00
+Text Label 6550 3500 2    60   ~ 0
+AIN01
+Text Label 6550 4100 2    60   ~ 0
+AIN03
+Text Label 6550 3800 2    60   ~ 0
+AIN02
+Text Label 850  3650 2    60   ~ 0
+AIN01
+Text Label 850  3850 2    60   ~ 0
+AIN02
+Text Label 850  4050 2    60   ~ 0
+AIN03
+$Comp
+L TEC1776275 SCREWTERM2
+U 1 1 582C6AE5
+P 9150 3450
+F 0 "SCREWTERM2" H 9100 4000 47  0000 C CNN
+F 1 "TEC1776275" H 9100 2600 47  0000 C CNN
+F 2 "freetronics_footprints:SCREWTERM12_3.5" H 9150 3450 47  0001 C CNN
+F 3 "" H 9150 3450 47  0001 C CNN
+	1    9150 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR08
+U 1 1 582C6AED
+P 8700 4400
+F 0 "#PWR08" H 8700 4150 50  0001 C CNN
+F 1 "GND" H 8700 4250 50  0000 C CNN
+F 2 "" H 8700 4400 50  0000 C CNN
+F 3 "" H 8700 4400 50  0000 C CNN
+	1    8700 4400
+	1    0    0    -1  
+$EndComp
+Text Label 8400 3200 2    60   ~ 0
+AIN04
+Text Label 8400 3500 2    60   ~ 0
+AIN05
+Text Label 8400 4100 2    60   ~ 0
+AIN07
+Text Label 8400 3800 2    60   ~ 0
+AIN06
+Text Label 3600 3500 2    60   ~ 0
+AIN04
+Text Label 3600 3700 2    60   ~ 0
+AIN05
+Text Label 3600 3900 2    60   ~ 0
+AIN06
+Text Label 3600 4100 2    60   ~ 0
+AIN07
+$Comp
+L ADS115IDGST-RESCUE-Arduino16BitADC_12Screw U1
+U 1 1 582C054A
+P 1550 4250
+F 0 "U1" H 1200 5750 60  0000 C CNN
+F 1 "ADS115IDGST" H 1450 4150 60  0000 C CNN
+F 2 "VAW_FootPrints:MSOP-10" H 2200 4600 60  0001 C CNN
+F 3 "" H 2200 4600 60  0001 C CNN
+	1    1550 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L DIODE_edit D1
+U 1 1 582C6531
+P 1550 1100
+F 0 "D1" H 1550 1200 40  0000 C CNN
+F 1 "DIODE_edit" H 1550 1000 40  0001 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10" H 1550 1100 60  0001 C CNN
+F 3 "" H 1550 1100 60  0000 C CNN
+	1    1550 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L BARREL_JACK CON1
+U 1 1 582C674C
+P 1050 1200
+F 0 "CON1" H 1050 1450 50  0000 C CNN
+F 1 "BARREL_JACK" H 1050 1000 50  0000 C CNN
+F 2 "VAW_FootPrints:BarrelJack_PJ102A" H 1050 1200 50  0001 C CNN
+F 3 "" H 1050 1200 50  0000 C CNN
+	1    1050 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L PTC_Fuse PTC1
+U 1 1 582C6842
+P 1850 1100
+F 0 "PTC1" H 1730 1160 50  0000 L CNN
+F 1 "PTC_Fuse" H 1730 1040 50  0000 L CNN
+F 2 "freetronics_footprints:PolySwitch_PTC_Radial" H 1850 1100 50  0001 C CNN
+F 3 "" H 1850 1100 50  0000 C CNN
+	1    1850 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L SWITCH_INV SW1
+U 1 1 582C6918
+P 2450 1100
+F 0 "SW1" H 2250 1250 50  0000 C CNN
+F 1 "SWITCH_INV" H 2300 950 50  0001 C CNN
+F 2 "freetronics_footprints:Switch_EG1218" H 2450 1100 50  0001 C CNN
+F 3 "" H 2450 1100 50  0000 C CNN
+	1    2450 1100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2950 1200
+Text Label 3100 1000 2    60   ~ 0
+9V
+$Comp
+L GND #PWR09
+U 1 1 582C6D60
+P 1550 1400
+F 0 "#PWR09" H 1550 1150 50  0001 C CNN
+F 1 "GND" H 1550 1250 50  0000 C CNN
+F 2 "" H 1550 1400 50  0000 C CNN
+F 3 "" H 1550 1400 50  0000 C CNN
+	1    1550 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L ARDUINO_SHIELD_VAW SHIELD1
+U 1 1 582C7150
+P 2150 6600
+F 0 "SHIELD1" H 1700 7750 60  0000 C CNN
+F 1 "ARDUINO_SHIELD_VAW" H 2200 5650 60  0000 C CNN
+F 2 "freetronics_footprints:ARDUINO_SHIELD_VAW_2" H 2150 6400 50  0001 C CNN
+F 3 "" H 2150 6600 60  0000 C CNN
+	1    2150 6600
+	1    0    0    -1  
+$EndComp
+Text Label 3200 5700 0    60   ~ 0
+SDA
+Text Label 3200 6000 0    60   ~ 0
+SCK
+Text Label 3200 6100 0    60   ~ 0
+MISO
+Text Label 3200 6200 0    60   ~ 0
+MOSI
+Text Label 3250 5200 0    60   ~ 0
+MOSI
+Text Label 1950 5200 2    60   ~ 0
+SCK
+Text Label 950  6200 2    60   ~ 0
+RST
+Text Label 1100 6400 2    60   ~ 0
+5V_ARD
+Text Label 1000 6500 2    60   ~ 0
+GND1
+Text Label 1950 5100 2    60   ~ 0
+MISO
+Text Label 1950 5300 2    60   ~ 0
+RST
+Text Label 3250 5100 0    60   ~ 0
+5V_ARD
+Text Label 3250 5300 0    60   ~ 0
+GND1
+Text Label 3200 5600 0    60   ~ 0
+SCL
+NoConn ~ 3100 5800
+NoConn ~ 3100 6400
+NoConn ~ 3100 6500
+NoConn ~ 3100 6700
+NoConn ~ 3100 6800
+NoConn ~ 3100 6900
+NoConn ~ 3100 7000
+NoConn ~ 3100 7100
+NoConn ~ 3100 7200
+NoConn ~ 1200 6900
+NoConn ~ 1200 7000
+NoConn ~ 1200 7100
+NoConn ~ 1200 7200
+NoConn ~ 1200 7300
+NoConn ~ 1200 7400
+NoConn ~ 1200 6000
+NoConn ~ 1200 6100
+NoConn ~ 1200 6700
+$Comp
+L C C3
+U 1 1 582CD12F
+P 6750 1250
+F 0 "C3" H 6775 1350 50  0000 L CNN
+F 1 "1µF" H 6775 1150 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_5p5x4_5Pitch" H 6788 1100 50  0001 C CNN
+F 3 "" H 6750 1250 50  0000 C CNN
+F 4 "Value" H 6750 1250 60  0001 C CNN "MFN"
+F 5 "Value" H 6750 1250 60  0001 C CNN "MFP#"
+F 6 "Value" H 6750 1250 60  0001 C CNN "Characteristics"
+F 7 "Value" H 6750 1250 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 6750 1250 60  0001 C CNN "S1N"
+F 9 "Value" H 6750 1250 60  0001 C CNN "S1P#"
+F 10 "Value" H 6750 1250 60  0001 C CNN "S1PLink"
+	1    6750 1250
+	1    0    0    -1  
+$EndComp
+Text Label 6550 1000 2    60   ~ 0
+5V_ARD
+$Comp
+L VCC #PWR010
+U 1 1 582CD3AB
+P 7100 1000
+F 0 "#PWR010" H 7100 850 50  0001 C CNN
+F 1 "VCC" H 7100 1150 50  0000 C CNN
+F 2 "" H 7100 1000 50  0000 C CNN
+F 3 "" H 7100 1000 50  0000 C CNN
+	1    7100 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 582CD401
+P 7100 1500
+F 0 "#PWR011" H 7100 1250 50  0001 C CNN
+F 1 "GND" H 7100 1350 50  0000 C CNN
+F 2 "" H 7100 1500 50  0000 C CNN
+F 3 "" H 7100 1500 50  0000 C CNN
+	1    7100 1500
+	1    0    0    -1  
+$EndComp
+Text Label 2850 3450 0    60   ~ 0
+SDA
+Text Label 5550 3500 0    60   ~ 0
+SDA
+Text Label 5500 3700 0    60   ~ 0
+V2_IN
+Text Label 6550 1500 2    60   ~ 0
+GND1
+Text Label 6500 2950 2    60   ~ 0
+5V_SENS
+Text Label 8350 2950 2    60   ~ 0
+5V_SENS
+NoConn ~ 1200 6300
+Text Label 5800 850  0    60   ~ 0
+5V_SENS
+$Comp
+L SPST SW2
+U 1 1 582D0816
+P 6200 6750
+F 0 "SW2" H 6200 6850 50  0000 C CNN
+F 1 "SPST" H 6200 6650 50  0000 C CNN
+F 2 "VAW_FootPrints:TactileSwitch_6x6mm" H 6200 6750 50  0001 C CNN
+F 3 "" H 6200 6750 50  0000 C CNN
+	1    6200 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 582D089A
+P 5600 6950
+F 0 "#PWR012" H 5600 6700 50  0001 C CNN
+F 1 "GND" H 5600 6800 50  0000 C CNN
+F 2 "" H 5600 6950 50  0000 C CNN
+F 3 "" H 5600 6950 50  0000 C CNN
+	1    5600 6950
+	1    0    0    -1  
+$EndComp
+Text Label 6950 6750 0    60   ~ 0
+RST
+$Comp
+L R R10
+U 1 1 582D0B33
+P 6750 6400
+F 0 "R10" V 6830 6400 50  0000 C CNN
+F 1 "10K" V 6750 6400 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 6680 6400 50  0001 C CNN
+F 3 "" H 6750 6400 50  0000 C CNN
+F 4 "Value" H 6750 6400 60  0001 C CNN "MFN"
+F 5 "Value" H 6750 6400 60  0001 C CNN "MFP#"
+F 6 "Value" H 6750 6400 60  0001 C CNN "Characteristics"
+F 7 "Value" H 6750 6400 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 6750 6400 60  0001 C CNN "S1N"
+F 9 "Value" H 6750 6400 60  0001 C CNN "S1P#"
+F 10 "Value" H 6750 6400 60  0001 C CNN "S1PLink"
+	1    6750 6400
+	1    0    0    -1  
+$EndComp
+Text Label 7000 6150 0    60   ~ 0
+5V_ARD
+Text Notes 1100 7750 0    60   ~ 12
+Shield pin configuration and connections
+Text Notes 850  4600 0    60   ~ 0
+I2C Address 0x48 (1001000)
+Text Notes 3750 4650 0    60   ~ 0
+I2C address 0x49 (1001001)
+Text Label 2700 3650 0    60   ~ 0
+G1_GND
+Text Label 5400 4100 0    60   ~ 0
+G2_GND
+$Comp
+L LED D2
+U 1 1 582DC10F
+P 4200 6150
+F 0 "D2" H 4200 6250 50  0000 C CNN
+F 1 "LED" H 4200 6050 50  0000 C CNN
+F 2 "LEDs:LED-3MM" H 4200 6150 50  0001 C CNN
+F 3 "" H 4200 6150 50  0000 C CNN
+	1    4200 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D3
+U 1 1 582DC174
+P 4800 6150
+F 0 "D3" H 4800 6250 50  0000 C CNN
+F 1 "LED" H 4800 6050 50  0000 C CNN
+F 2 "LEDs:LED-3MM" H 4800 6150 50  0001 C CNN
+F 3 "" H 4800 6150 50  0000 C CNN
+	1    4800 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R4
+U 1 1 582DC1F3
+P 4200 6650
+F 0 "R4" V 4280 6650 50  0000 C CNN
+F 1 "1K" V 4200 6650 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 4130 6650 50  0001 C CNN
+F 3 "https://www.seielect.com/Catalog/SEI-RNF_RNMF.pdf" H 4200 6650 50  0001 C CNN
+F 4 "Stackpole Electronics Inc." H 4200 6650 60  0001 C CNN "MFN"
+F 5 "RNF14FTD1K00" H 4200 6650 60  0001 C CNN "MFP#"
+F 6 "RES 1K OHM 1/4W 1% AXIAL" H 4200 6650 60  0001 C CNN "Characteristics"
+F 7 "Through Hole; 0.093\" Dia x 0.250\" L (2.35mm x 6.35mm)" H 4200 6650 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 4200 6650 60  0001 C CNN "S1N"
+F 9 "RNF14FTD1K00CT-ND" H 4200 6650 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RNF14FTD1K00/RNF14FTD1K00CT-ND/1975018" H 4200 6650 60  0001 C CNN "S1PLink"
+	1    4200 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 582DC283
+P 4800 6650
+F 0 "R5" V 4880 6650 50  0000 C CNN
+F 1 "1K" V 4800 6650 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 4730 6650 50  0001 C CNN
+F 3 "https://www.seielect.com/Catalog/SEI-RNF_RNMF.pdf" H 4800 6650 50  0001 C CNN
+F 4 "Stackpole Electronics Inc." H 4800 6650 60  0001 C CNN "MFN"
+F 5 "RNF14FTD1K00" H 4800 6650 60  0001 C CNN "MFP#"
+F 6 "RES 1K OHM 1/4W 1% AXIAL" H 4800 6650 60  0001 C CNN "Characteristics"
+F 7 "Through Hole; 0.093\" Dia x 0.250\" L (2.35mm x 6.35mm)" H 4800 6650 60  0001 C CNN "JEDEC Package ID"
+F 8 "DigiKey" H 4800 6650 60  0001 C CNN "S1N"
+F 9 "RNF14FTD1K00CT-ND" H 4800 6650 60  0001 C CNN "S1P#"
+F 10 "https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RNF14FTD1K00/RNF14FTD1K00CT-ND/1975018" H 4800 6650 60  0001 C CNN "S1PLink"
+	1    4800 6650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR013
+U 1 1 582DC2E1
+P 4800 6950
+F 0 "#PWR013" H 4800 6700 50  0001 C CNN
+F 1 "GND" H 4800 6800 50  0000 C CNN
+F 2 "" H 4800 6950 50  0000 C CNN
+F 3 "" H 4800 6950 50  0000 C CNN
+	1    4800 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR014
+U 1 1 582DC337
+P 4200 6950
+F 0 "#PWR014" H 4200 6700 50  0001 C CNN
+F 1 "GND" H 4200 6800 50  0000 C CNN
+F 2 "" H 4200 6950 50  0000 C CNN
+F 3 "" H 4200 6950 50  0000 C CNN
+	1    4200 6950
+	1    0    0    -1  
+$EndComp
+Text Notes 5300 800  0    60   ~ 0
+Power indicator\nLED
+Text Label 3200 7400 0    60   ~ 0
+D0
+Text Label 3200 7300 0    60   ~ 0
+D1
+Text Label 4850 5850 0    60   ~ 0
+D1
+Text Notes 5650 1150 0    60   ~ 0
+Blue
+Text Label 4250 5850 0    60   ~ 0
+D0
+Text Notes 4300 6400 0    60   ~ 0
+Red\n(Error)
+Text Notes 4900 6400 0    60   ~ 0
+Green\n(Running)
+Text Notes 3850 7350 0    60   ~ 12
+Program status indicator LEDs
+$Comp
+L PCF8523 U5
+U 1 1 58321182
+P 11800 1300
+F 0 "U5" H 11550 1600 50  0000 L CNN
+F 1 "PCF8523" H 11750 1600 50  0000 L CNN
+F 2 "SMD_Packages:SOIC-8-N" H 11800 1300 50  0001 C CNN
+F 3 "" H 11800 1300 50  0000 C CNN
+	1    11800 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Crystal Y1
+U 1 1 583211DB
+P 11000 900
+F 0 "Y1" H 11000 1050 50  0000 C CNN
+F 1 "32.768kHz" H 11000 750 50  0000 C CNN
+F 2 "VAW_FootPrints:Crystal_CFS-206" H 11000 900 50  0001 C CNN
+F 3 "" H 11000 900 50  0000 C CNN
+F 4 "Value" H 11000 900 60  0001 C CNN "MFN"
+F 5 "Value" H 11000 900 60  0001 C CNN "MFP#"
+F 6 "Value" H 11000 900 60  0001 C CNN "Characteristics"
+F 7 "Value" H 11000 900 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 11000 900 60  0001 C CNN "S1N"
+F 9 "Value" H 11000 900 60  0001 C CNN "S1P#"
+F 10 "Value" H 11000 900 60  0001 C CNN "S1PLink"
+	1    11000 900 
+	0    1    1    0   
+$EndComp
+$Comp
+L Battery BT1
+U 1 1 58321461
+P 11000 1500
+F 0 "BT1" H 11100 1550 50  0000 L CNN
+F 1 "CR1220" H 11100 1450 50  0000 L CNN
+F 2 "VAW_FootPrints:Coin_Cell_Batt_12mm" V 11000 1540 50  0001 C CNN
+F 3 "" V 11000 1540 50  0000 C CNN
+F 4 "Value" H 11000 1500 60  0001 C CNN "MFN"
+F 5 "Value" H 11000 1500 60  0001 C CNN "MFP#"
+F 6 "Value" H 11000 1500 60  0001 C CNN "Characteristics"
+F 7 "Value" H 11000 1500 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 11000 1500 60  0001 C CNN "S1N"
+F 9 "Value" H 11000 1500 60  0001 C CNN "S1P#"
+F 10 "Value" H 11000 1500 60  0001 C CNN "S1PLink"
+	1    11000 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR015
+U 1 1 5832188A
+P 11000 1750
+F 0 "#PWR015" H 11000 1500 50  0001 C CNN
+F 1 "GND" H 11000 1600 50  0000 C CNN
+F 2 "" H 11000 1750 50  0000 C CNN
+F 3 "" H 11000 1750 50  0000 C CNN
+	1    11000 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR016
+U 1 1 583219F6
+P 11400 1750
+F 0 "#PWR016" H 11400 1500 50  0001 C CNN
+F 1 "GND" H 11400 1600 50  0000 C CNN
+F 2 "" H 11400 1750 50  0000 C CNN
+F 3 "" H 11400 1750 50  0000 C CNN
+	1    11400 1750
+	1    0    0    -1  
+$EndComp
+Text Label 12750 850  0    60   ~ 0
+5V_ARD
+Text Label 12950 1350 0    60   ~ 0
+SCL
+Text Label 12950 1450 0    60   ~ 0
+SDA
+Text Label 3200 6300 0    60   ~ 0
+CS
+$Comp
+L CD74HC4050 U6
+U 1 1 58323B4C
+P 11600 3150
+F 0 "U6" H 11300 3650 60  0000 L BNN
+F 1 "CD74HC4050" H 11300 2650 60  0000 L BNN
+F 2 "SMD_Packages:SO-16-N" H 11600 3150 60  0001 C CNN
+F 3 "" H 11600 3150 60  0000 C CNN
+	1    11600 3150
+	1    0    0    -1  
+$EndComp
+Text Label 10850 2950 2    60   ~ 0
+MOSI
+Text Label 11050 2850 2    60   ~ 0
+SD_DATIN
+$Comp
+L GND #PWR017
+U 1 1 58325CE1
+P 10850 5500
+F 0 "#PWR017" H 10850 5250 50  0001 C CNN
+F 1 "GND" H 10850 5350 50  0000 C CNN
+F 2 "" H 10850 5500 50  0000 C CNN
+F 3 "" H 10850 5500 50  0000 C CNN
+	1    10850 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR018
+U 1 1 5832623C
+P 12350 5400
+F 0 "#PWR018" H 12350 5150 50  0001 C CNN
+F 1 "GND" H 12350 5250 50  0000 C CNN
+F 2 "" H 12350 5400 50  0000 C CNN
+F 3 "" H 12350 5400 50  0000 C CNN
+	1    12350 5400
+	1    0    0    -1  
+$EndComp
+Text Label 10450 5300 2    60   ~ 0
+MISO
+NoConn ~ 10950 5400
+NoConn ~ 12250 4700
+Text Label 10650 4800 2    60   ~ 0
+SD_DATIN
+Text Label 10800 3150 2    60   ~ 0
+SCK
+Text Label 11050 3050 2    60   ~ 0
+SD_SCKIN
+Text Label 10650 5100 2    60   ~ 0
+SD_SCKIN
+Text Label 10250 3350 2    60   ~ 0
+CS
+Text Label 11000 3250 2    60   ~ 0
+SD_CSIN
+$Comp
+L GND #PWR019
+U 1 1 58329251
+P 11150 3550
+F 0 "#PWR019" H 11150 3300 50  0001 C CNN
+F 1 "GND" H 11150 3400 50  0000 C CNN
+F 2 "" H 11150 3550 50  0000 C CNN
+F 3 "" H 11150 3550 50  0000 C CNN
+	1    11150 3550
+	1    0    0    -1  
+$EndComp
+Text Label 10600 4700 2    60   ~ 0
+SD_CSIN
+NoConn ~ 12000 3350
+NoConn ~ 12000 3150
+NoConn ~ 12000 2850
+$Comp
+L MIC5225_3P3 U4
+U 1 1 5832A9A0
+P 8900 5700
+F 0 "U4" H 8700 6000 60  0000 C CNN
+F 1 "MIC5225_3P3" H 8950 5350 60  0000 C CNN
+F 2 "VAW_FootPrints:SOT23-5" H 8900 5700 60  0001 C CNN
+F 3 "" H 8900 5700 60  0001 C CNN
+	1    8900 5700
+	1    0    0    -1  
+$EndComp
+Text Label 7900 5550 2    60   ~ 0
+5V_ARD
+$Comp
+L GND #PWR020
+U 1 1 5832ADD8
+P 8300 6150
+F 0 "#PWR020" H 8300 5900 50  0001 C CNN
+F 1 "GND" H 8300 6000 50  0000 C CNN
+F 2 "" H 8300 6150 50  0000 C CNN
+F 3 "" H 8300 6150 50  0000 C CNN
+	1    8300 6150
+	1    0    0    -1  
+$EndComp
+Text Label 9800 5600 0    60   ~ 0
+3P3V
+$Comp
+L LM7805CT U3
+U 1 1 5832BB86
+P 4400 900
+F 0 "U3" H 4200 1100 50  0000 C CNN
+F 1 "LM7805CT" H 4400 1100 50  0000 L CNN
+F 2 "Power_Integrations:TO-220" H 4400 1000 50  0001 C CIN
+F 3 "" H 4400 900 50  0000 C CNN
+	1    4400 900 
+	1    0    0    -1  
+$EndComp
+Text Label 11100 2650 2    60   ~ 0
+3P3V
+Wire Wire Line
+	3450 850  4000 850 
+Wire Wire Line
+	3800 850  3800 1000
+Wire Wire Line
+	4800 850  5800 850 
+Wire Wire Line
+	5000 850  5000 1000
+Wire Wire Line
+	3800 1300 3800 1450
+Wire Wire Line
+	3800 1450 5000 1450
+Wire Wire Line
+	5000 1450 5000 1300
+Wire Wire Line
+	4400 1150 4400 1650
+Connection ~ 4400 1450
+Connection ~ 3800 850 
+Connection ~ 5000 850 
+Wire Wire Line
+	5500 1250 5500 1300
+Wire Wire Line
+	5500 1600 5500 1650
+Connection ~ 5500 850 
+Wire Wire Line
+	7500 1000 7950 1000
+Wire Wire Line
+	7500 1500 7950 1500
+Wire Wire Line
+	8350 1000 8450 1000
+Wire Wire Line
+	8350 1500 8450 1500
+Wire Wire Line
+	7750 1100 7750 1000
+Connection ~ 7750 1000
+Wire Wire Line
+	7750 1400 7750 1500
+Connection ~ 7750 1500
+Wire Wire Line
+	9004 1012 9454 1012
+Wire Wire Line
+	9004 1512 9454 1512
+Wire Wire Line
+	9854 1012 9954 1012
+Wire Wire Line
+	9854 1512 9954 1512
+Wire Wire Line
+	9254 1112 9254 1012
+Connection ~ 9254 1012
+Wire Wire Line
+	9254 1412 9254 1512
+Connection ~ 9254 1512
+Wire Wire Line
+	3700 3300 3600 3300
+Wire Wire Line
+	4900 3300 5550 3300
+Wire Wire Line
+	4900 3500 5550 3500
+Wire Wire Line
+	4900 3700 5500 3700
+Wire Wire Line
+	4950 3050 4950 3300
+Connection ~ 4950 3300
+Wire Wire Line
+	5150 3050 5150 3500
+Connection ~ 5150 3500
+Wire Wire Line
+	5350 3050 5350 3900
+Wire Wire Line
+	5350 3900 4900 3900
+Wire Wire Line
+	4950 2750 4950 2500
+Wire Wire Line
+	4950 2500 5500 2500
+Wire Wire Line
+	5150 2750 5150 2500
+Connection ~ 5150 2500
+Wire Wire Line
+	5350 2750 5350 2500
+Connection ~ 5350 2500
+Wire Wire Line
+	950  3250 850  3250
+Wire Wire Line
+	2150 3250 2850 3250
+Wire Wire Line
+	2150 3450 2850 3450
+Wire Wire Line
+	2200 3000 2200 3250
+Connection ~ 2200 3250
+Wire Wire Line
+	2400 3000 2400 3450
+Connection ~ 2400 3450
+Wire Wire Line
+	2600 3000 2600 3850
+Wire Wire Line
+	2600 3850 2150 3850
+Wire Wire Line
+	2200 2700 2200 2450
+Wire Wire Line
+	2200 2450 2750 2450
+Wire Wire Line
+	2400 2700 2400 2450
+Connection ~ 2400 2450
+Wire Wire Line
+	2600 2700 2600 2450
+Connection ~ 2600 2450
+Wire Wire Line
+	3600 3500 3700 3500
+Wire Wire Line
+	950  3450 850  3450
+Wire Wire Line
+	6950 3300 6850 3300
+Wire Wire Line
+	6850 3300 6850 4400
+Wire Wire Line
+	6950 3600 6850 3600
+Connection ~ 6850 3600
+Wire Wire Line
+	6950 3900 6850 3900
+Connection ~ 6850 3900
+Wire Wire Line
+	6950 4200 6850 4200
+Connection ~ 6850 4200
+Wire Wire Line
+	6750 4000 6950 4000
+Wire Wire Line
+	6750 2950 6750 4000
+Wire Wire Line
+	6950 3700 6750 3700
+Connection ~ 6750 3700
+Wire Wire Line
+	6950 3400 6750 3400
+Connection ~ 6750 3400
+Wire Wire Line
+	6950 3100 6750 3100
+Connection ~ 6750 3100
+Wire Wire Line
+	6950 3200 6550 3200
+Wire Wire Line
+	6950 3500 6550 3500
+Wire Wire Line
+	6950 3800 6550 3800
+Wire Wire Line
+	6950 4100 6550 4100
+Wire Wire Line
+	950  3650 850  3650
+Wire Wire Line
+	950  3850 850  3850
+Wire Wire Line
+	950  4050 850  4050
+Wire Wire Line
+	8800 3300 8700 3300
+Wire Wire Line
+	8700 3300 8700 4400
+Wire Wire Line
+	8800 3600 8700 3600
+Connection ~ 8700 3600
+Wire Wire Line
+	8800 3900 8700 3900
+Connection ~ 8700 3900
+Wire Wire Line
+	8800 4200 8700 4200
+Connection ~ 8700 4200
+Wire Wire Line
+	8600 4000 8800 4000
+Wire Wire Line
+	8600 3700 8800 3700
+Connection ~ 8600 3700
+Wire Wire Line
+	8600 3400 8800 3400
+Connection ~ 8600 3400
+Wire Wire Line
+	8800 3100 8600 3100
+Connection ~ 8600 3100
+Wire Wire Line
+	8800 3200 8400 3200
+Wire Wire Line
+	8800 3500 8400 3500
+Wire Wire Line
+	8800 3800 8400 3800
+Wire Wire Line
+	8800 4100 8400 4100
+Wire Wire Line
+	3700 3700 3600 3700
+Wire Wire Line
+	3700 3900 3600 3900
+Wire Wire Line
+	3700 4100 3600 4100
+Wire Wire Line
+	2950 1000 3100 1000
+Wire Wire Line
+	1350 1200 1550 1200
+Wire Wire Line
+	1550 1200 1550 1400
+Wire Wire Line
+	1350 1300 1550 1300
+Connection ~ 1550 1300
+Wire Wire Line
+	3100 5600 3200 5600
+Wire Wire Line
+	3100 5700 3200 5700
+Wire Wire Line
+	3100 6000 3200 6000
+Wire Wire Line
+	3100 6100 3200 6100
+Wire Wire Line
+	3100 6200 3200 6200
+Wire Wire Line
+	3100 5200 3250 5200
+Wire Wire Line
+	1950 5200 2050 5200
+Wire Wire Line
+	1950 5100 2050 5100
+Wire Wire Line
+	1950 5300 2050 5300
+Wire Wire Line
+	3100 5100 3250 5100
+Wire Wire Line
+	3100 5300 3250 5300
+Wire Wire Line
+	950  6200 1200 6200
+Wire Wire Line
+	1100 6400 1200 6400
+Wire Wire Line
+	1000 6500 1200 6500
+Wire Wire Line
+	6550 1500 7100 1500
+Wire Wire Line
+	6750 1400 6750 1500
+Connection ~ 6750 1500
+Wire Wire Line
+	6550 1000 7100 1000
+Wire Wire Line
+	6750 1100 6750 1000
+Connection ~ 6750 1000
+Wire Wire Line
+	8600 2950 8600 4000
+Wire Wire Line
+	8600 2950 8350 2950
+Wire Wire Line
+	6750 2950 6500 2950
+Wire Wire Line
+	5700 6750 5600 6750
+Wire Wire Line
+	5600 6750 5600 6950
+Wire Wire Line
+	6700 6750 6950 6750
+Wire Wire Line
+	6750 6550 6750 6750
+Connection ~ 6750 6750
+Wire Wire Line
+	6750 6250 6750 6150
+Wire Wire Line
+	6750 6150 7000 6150
+Wire Wire Line
+	2150 4050 2700 4050
+Wire Wire Line
+	2150 3650 2700 3650
+Wire Wire Line
+	4900 4100 5400 4100
+Wire Wire Line
+	4200 6500 4200 6350
+Wire Wire Line
+	4800 6500 4800 6350
+Wire Wire Line
+	4200 6950 4200 6800
+Wire Wire Line
+	4800 6950 4800 6800
+Wire Wire Line
+	3100 7300 3200 7300
+Wire Wire Line
+	3100 7400 3200 7400
+Wire Wire Line
+	4200 5950 4200 5850
+Wire Wire Line
+	4200 5850 4250 5850
+Wire Wire Line
+	4800 5950 4800 5850
+Wire Wire Line
+	4800 5850 4850 5850
+Wire Wire Line
+	11400 1150 11250 1150
+Wire Wire Line
+	11250 1150 11250 750 
+Wire Wire Line
+	11250 750  11000 750 
+Wire Wire Line
+	11400 1250 11150 1250
+Wire Wire Line
+	11150 1250 11150 1050
+Wire Wire Line
+	11150 1050 11000 1050
+Wire Wire Line
+	11400 1350 11000 1350
+Wire Wire Line
+	11000 1650 11000 1750
+Wire Wire Line
+	11400 1450 11400 1750
+Wire Wire Line
+	12200 1450 12950 1450
+Wire Wire Line
+	12200 1350 12950 1350
+Wire Wire Line
+	12200 1150 12300 1150
+Wire Wire Line
+	3100 6300 3200 6300
+Wire Wire Line
+	10850 2950 11200 2950
+Wire Wire Line
+	11200 2850 11050 2850
+Wire Wire Line
+	10950 4900 10850 4900
+Wire Wire Line
+	10850 4900 10850 5500
+Wire Wire Line
+	10950 5200 10850 5200
+Connection ~ 10850 5200
+Wire Wire Line
+	12250 5000 12350 5000
+Wire Wire Line
+	12350 5000 12350 5400
+Wire Wire Line
+	12250 5100 12350 5100
+Connection ~ 12350 5100
+Wire Wire Line
+	10450 5300 10950 5300
+Wire Wire Line
+	10950 4800 10650 4800
+Wire Wire Line
+	10800 3150 11200 3150
+Wire Wire Line
+	11200 3050 11050 3050
+Wire Wire Line
+	10950 5100 10650 5100
+Wire Wire Line
+	10250 3350 11200 3350
+Wire Wire Line
+	11200 3250 11000 3250
+Wire Wire Line
+	11200 3450 11150 3450
+Wire Wire Line
+	11150 3450 11150 3550
+Wire Wire Line
+	10600 4700 10950 4700
+Wire Wire Line
+	7900 5550 8550 5550
+Wire Wire Line
+	8550 5850 8450 5850
+Wire Wire Line
+	8450 5850 8450 5550
+Connection ~ 8450 5550
+Wire Wire Line
+	8550 5700 8300 5700
+Wire Wire Line
+	8300 5700 8300 6150
+Wire Wire Line
+	9250 5600 9800 5600
+Wire Wire Line
+	11200 2750 11100 2750
+Wire Wire Line
+	11100 2750 11100 2650
+Text Label 10450 5000 2    60   ~ 0
+3P3V
+Wire Wire Line
+	10950 5000 10450 5000
+$Comp
+L R R11
+U 1 1 5832FD2A
+P 10400 3100
+F 0 "R11" V 10480 3100 50  0000 C CNN
+F 1 "10K" V 10400 3100 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 10330 3100 50  0001 C CNN
+F 3 "" H 10400 3100 50  0000 C CNN
+F 4 "Value" H 10400 3100 60  0001 C CNN "MFN"
+F 5 "Value" H 10400 3100 60  0001 C CNN "MFP#"
+F 6 "Value" H 10400 3100 60  0001 C CNN "Characteristics"
+F 7 "Value" H 10400 3100 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 10400 3100 60  0001 C CNN "S1N"
+F 9 "Value" H 10400 3100 60  0001 C CNN "S1P#"
+F 10 "Value" H 10400 3100 60  0001 C CNN "S1PLink"
+	1    10400 3100
+	1    0    0    -1  
+$EndComp
+Text Label 10250 2950 2    60   ~ 0
+5V_ARD
+Wire Wire Line
+	10400 3250 10400 3350
+Connection ~ 10400 3350
+Wire Wire Line
+	10400 2950 10250 2950
+NoConn ~ 1200 6600
+NoConn ~ 3100 5900
+$Comp
+L C C7
+U 1 1 58331A2C
+P 9500 5850
+F 0 "C7" H 9525 5950 50  0000 L CNN
+F 1 "1µF" H 9525 5750 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_5p5x4_5Pitch" H 9538 5700 50  0001 C CNN
+F 3 "" H 9500 5850 50  0000 C CNN
+F 4 "Value" H 9500 5850 60  0001 C CNN "MFN"
+F 5 "Value" H 9500 5850 60  0001 C CNN "MFP#"
+F 6 "Value" H 9500 5850 60  0001 C CNN "Characteristics"
+F 7 "Value" H 9500 5850 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 9500 5850 60  0001 C CNN "S1N"
+F 9 "Value" H 9500 5850 60  0001 C CNN "S1P#"
+F 10 "Value" H 9500 5850 60  0001 C CNN "S1PLink"
+	1    9500 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR021
+U 1 1 58331B11
+P 9500 6150
+F 0 "#PWR021" H 9500 5900 50  0001 C CNN
+F 1 "GND" H 9500 6000 50  0000 C CNN
+F 2 "" H 9500 6150 50  0000 C CNN
+F 3 "" H 9500 6150 50  0000 C CNN
+	1    9500 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 5700 9500 5600
+Connection ~ 9500 5600
+Wire Wire Line
+	9500 6000 9500 6150
+$Comp
+L C C6
+U 1 1 58331FCA
+P 8050 5800
+F 0 "C6" H 8075 5900 50  0000 L CNN
+F 1 "1µF" H 8075 5700 50  0000 L CNN
+F 2 "VAW_FootPrints:Capacitor_5p5x4_5Pitch" H 8088 5650 50  0001 C CNN
+F 3 "" H 8050 5800 50  0000 C CNN
+F 4 "Value" H 8050 5800 60  0001 C CNN "MFN"
+F 5 "Value" H 8050 5800 60  0001 C CNN "MFP#"
+F 6 "Value" H 8050 5800 60  0001 C CNN "Characteristics"
+F 7 "Value" H 8050 5800 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 8050 5800 60  0001 C CNN "S1N"
+F 9 "Value" H 8050 5800 60  0001 C CNN "S1P#"
+F 10 "Value" H 8050 5800 60  0001 C CNN "S1PLink"
+	1    8050 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR022
+U 1 1 583320A3
+P 8050 6150
+F 0 "#PWR022" H 8050 5900 50  0001 C CNN
+F 1 "GND" H 8050 6000 50  0000 C CNN
+F 2 "" H 8050 6150 50  0000 C CNN
+F 3 "" H 8050 6150 50  0000 C CNN
+	1    8050 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 5550 8050 5650
+Connection ~ 8050 5550
+Wire Wire Line
+	8050 5950 8050 6150
+$Comp
+L R R12
+U 1 1 58332911
+P 12450 1100
+F 0 "R12" V 12530 1100 50  0000 C CNN
+F 1 "2.2K" V 12450 1100 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 12380 1100 50  0001 C CNN
+F 3 "" H 12450 1100 50  0000 C CNN
+F 4 "Value" H 12450 1100 60  0001 C CNN "MFN"
+F 5 "Value" H 12450 1100 60  0001 C CNN "MFP#"
+F 6 "Value" H 12450 1100 60  0001 C CNN "Characteristics"
+F 7 "Value" H 12450 1100 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 12450 1100 60  0001 C CNN "S1N"
+F 9 "Value" H 12450 1100 60  0001 C CNN "S1P#"
+F 10 "Value" H 12450 1100 60  0001 C CNN "S1PLink"
+	1    12450 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R15
+U 1 1 58332A49
+P 12650 1100
+F 0 "R15" V 12730 1100 50  0000 C CNN
+F 1 "2.2K" V 12650 1100 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 12580 1100 50  0001 C CNN
+F 3 "" H 12650 1100 50  0000 C CNN
+	1    12650 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12450 950  12450 850 
+Wire Wire Line
+	12300 850  12750 850 
+Wire Wire Line
+	12650 950  12650 850 
+Connection ~ 12650 850 
+Wire Wire Line
+	12450 1250 12450 1450
+Connection ~ 12450 1450
+Wire Wire Line
+	12650 1250 12650 1350
+Connection ~ 12650 1350
+Wire Wire Line
+	12300 1150 12300 850 
+Connection ~ 12450 850 
+$Comp
+L SD_MMC CON2
+U 1 1 5832E041
+P 11600 5050
+F 0 "CON2" H 11200 5550 60  0000 C CNN
+F 1 "SD_MMC" H 11650 4600 60  0000 C CNN
+F 2 "VAW_FootPrints:SD_101-00708-64" H 11700 5050 60  0001 C CNN
+F 3 "" H 11700 5050 60  0001 C CNN
+	1    11600 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12250 5200 12350 5200
+Connection ~ 12350 5200
+Wire Wire Line
+	12250 5300 12350 5300
+Connection ~ 12350 5300
+$Comp
+L R R13
+U 1 1 583461EB
+P 12350 3550
+F 0 "R13" V 12430 3550 50  0000 C CNN
+F 1 "2.2K" V 12350 3550 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 12280 3550 50  0001 C CNN
+F 3 "" H 12350 3550 50  0000 C CNN
+	1    12350 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR023
+U 1 1 58346388
+P 12600 3650
+F 0 "#PWR023" H 12600 3400 50  0001 C CNN
+F 1 "GND" H 12600 3500 50  0000 C CNN
+F 2 "" H 12600 3650 50  0000 C CNN
+F 3 "" H 12600 3650 50  0000 C CNN
+	1    12600 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12000 2950 12100 2950
+Wire Wire Line
+	12100 2950 12100 3550
+Wire Wire Line
+	12100 3550 12200 3550
+Wire Wire Line
+	12000 3450 12100 3450
+Connection ~ 12100 3450
+Wire Wire Line
+	12000 3250 12100 3250
+Connection ~ 12100 3250
+Wire Wire Line
+	12500 3550 12600 3550
+Wire Wire Line
+	12600 3550 12600 3650
+$Comp
+L R R14
+U 1 1 583478AC
+P 12800 4950
+F 0 "R14" V 12880 4950 50  0000 C CNN
+F 1 "2.2K" V 12800 4950 50  0000 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 12730 4950 50  0001 C CNN
+F 3 "" H 12800 4950 50  0000 C CNN
+F 4 "Value" H 12800 4950 60  0001 C CNN "MFN"
+F 5 "Value" H 12800 4950 60  0001 C CNN "MFP#"
+F 6 "Value" H 12800 4950 60  0001 C CNN "Characteristics"
+F 7 "Value" H 12800 4950 60  0001 C CNN "JEDEC Package ID"
+F 8 "Value" H 12800 4950 60  0001 C CNN "S1N"
+F 9 "Value" H 12800 4950 60  0001 C CNN "S1P#"
+F 10 "Value" H 12800 4950 60  0001 C CNN "S1PLink"
+	1    12800 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D5
+U 1 1 58347957
+P 12800 5350
+F 0 "D5" H 12800 5450 50  0000 C CNN
+F 1 "LED" H 12800 5250 50  0000 C CNN
+F 2 "LEDs:LED-3MM" H 12800 5350 50  0001 C CNN
+F 3 "" H 12800 5350 50  0000 C CNN
+	1    12800 5350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR024
+U 1 1 58347AA4
+P 12800 5600
+F 0 "#PWR024" H 12800 5350 50  0001 C CNN
+F 1 "GND" H 12800 5450 50  0000 C CNN
+F 2 "" H 12800 5600 50  0000 C CNN
+F 3 "" H 12800 5600 50  0000 C CNN
+	1    12800 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12800 5100 12800 5150
+Wire Wire Line
+	12800 5550 12800 5600
+Text Label 12700 4700 2    60   ~ 0
+SCK
+Wire Wire Line
+	12700 4700 12800 4700
+Wire Wire Line
+	12800 4700 12800 4800
+Text Label 12350 4800 0    60   ~ 0
+CD
+Text Label 12350 4900 0    60   ~ 0
+WP
+Wire Wire Line
+	12250 4800 12350 4800
+Wire Wire Line
+	12250 4900 12350 4900
+$Comp
+L CONN_01X03 P1
+U 1 1 58347007
+P 6400 5450
+F 0 "P1" H 6400 5650 50  0000 C CNN
+F 1 "CONN_01X03" V 6500 5450 50  0000 C CNN
+F 2 "VAW_FootPrints:Three_Hole_Jump" H 6400 5450 50  0001 C CNN
+F 3 "" H 6400 5450 50  0000 C CNN
+	1    6400 5450
+	1    0    0    -1  
+$EndComp
+Text Label 6000 5350 2    60   ~ 0
+CD
+Text Label 6000 5450 2    60   ~ 0
+WP
+Wire Wire Line
+	6000 5350 6200 5350
+Wire Wire Line
+	6000 5450 6200 5450
+Text Label 12300 1750 0    60   ~ 0
+SQW
+Wire Wire Line
+	12200 1250 12250 1250
+Wire Wire Line
+	12250 1250 12250 1750
+Wire Wire Line
+	12250 1750 12300 1750
+Text Label 6050 5550 2    60   ~ 0
+SQW
+Wire Wire Line
+	6050 5550 6200 5550
+Text Notes 5850 5850 0    60   ~ 12
+Output jumper
+Text Notes 8350 6500 0    60   ~ 12
+3.3V voltage regulator
+Text Notes 10850 5900 0    60   ~ 12
+SD/MMC card and card status LED
+Text Notes 11350 4000 0    60   ~ 12
+Level shifter
+Text Notes 11450 2100 0    60   ~ 12
+Real-time clock
+Text Notes 13000 5500 0    60   ~ 0
+Yellow
+$EndSCHEMATC
